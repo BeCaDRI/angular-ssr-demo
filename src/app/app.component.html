@@ -1,0 +1,12 @@
+{{ helloVar }} <span>{{ queryParams?.name }}</span>!
+@if (!successMessage) {
+<form action="http://localhost:4000/api/form-submit" method="get" (ngSubmit)="onSubmit()">
+  <label for="name">{{nameLabel}}</label>
+  <input type="text" [(ngModel)]="formData.name" name="name" value="data-dynamic-content-name">
+  <label for="email">{{emailLabel}}</label>
+  <input type="email" [(ngModel)]="formData.email" name="email" value="data-dynamic-content-email">
+  <button type="submit">{{buttonText}}</button>
+</form>
+} @else {
+  <p>{{successMessage}}</p>
+}
